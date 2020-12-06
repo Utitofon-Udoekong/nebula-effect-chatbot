@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #000;
+}
+.scene{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+header{
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.logo{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.logo img{
+    background: rgba(0, 0, 0, 0.295);
+    padding: 20px;
+    width: 150px;
+    backdrop-filter: blur(5px);
+}
+.main{
+    margin-top: 80px;
+    width: 100%;
+    height: calc(100vh - 40px);
+    padding: 30px;
+}
+.user-area,
+.chatbot-area{
+    float: left;
+    width: 20%;
+    height: calc(100vh - 40px);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 100px;
+}
+.chatbot-area{
+    left: auto;
+   right: 100px;
+}
+.user-area img,
+.chatbot-area img{
+    width: 100%;
+}
+.chatarea-main{
+    width: 42%;
+    margin: 0 auto;
+}
+.chatarea-outer{
+    width: 100%;
+    float: left;
+}
+.chatarea-inner{
+    float: left;
+    color: #fff;
+    width: 60%;
+    position: relative;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+.chatarea-inner.user{
+    background: hsla(266, 76%, 37%, 0.686);
+}
+.chatarea-inner.chatbot{
+    float: right;
+    background: rgba(34, 21, 55, 0.884);
+}
+.chatarea-inner.user::before,
+.chatarea-inner.chatbot::before{
+    position: absolute;
+    content: '';
+    bottom: 5px;
+    z-index: -1;
+    left: -10px;
+    width: 10px;
+    height: 20px;
+    background: hsla(266, 76%, 37%, 0.686);
+    transform: rotate(55deg);
+}
+.chatarea-inner.chatbot::before{
+    left: auto;
+    right: -10px;
+    background: rgba(34, 21, 55, 0.658);
+    transform: rotate(-55deg);
+}
+.main button{
+    width: 55px;
+    height: 55px;
+    background: rgb(34, 21, 55);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    animation: pulse 2s linear infinite;
+    cursor: pointer;
+}
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 rgba(190, 170, 223, 0.6);
+    }
+    70%{
+        box-shadow: 0 0 50px 0 rgba(190, 170, 223, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(190, 170, 223,0);
+    }
+}
+@font-face {
+	font-family: 'Roboto-Regular';
+	src: url('../fonts/Roboto-Regular.eot');
+	src: local('☺'), url('../fonts/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto-Regular.ttf') format('truetype'), url('../fonts/Roboto-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.eot");
+    src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/Flaticon.woff2") format("woff2"),
+         url("../fonts/Flaticon.woff") format("woff"),
+         url("../fonts/Flaticon.ttf") format("truetype"),
+         url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: "Flaticon";
+      src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    }
+  }
+  
+  [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+  [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-family: Flaticon;
+          font-size: 30px;
+  font-style: normal;
+  }
+  
+.flaticon-microphone:before { content: "\f100"; }
