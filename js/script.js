@@ -31,7 +31,7 @@ function showchatbotmsg(chatbotmsg) {
 function chatbotvoice(message) {
     const speech = new SpeechSynthesisUtterance();
     speech.text = "This is test message";
-    if (message.includes('who are you')) {
+    if (message.includes('who are you' || 'hello')) {
         let finalresult = intro[Math.floor(Math.random() * intro.length)];
         speech.text = finalresult;
     }
