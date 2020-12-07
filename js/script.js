@@ -9,6 +9,7 @@ let greetings = ["i am good you little piece of the universe", "i am fine, what 
 let hobbies = ["i love to talk with humans", "i like to make friends like you", "i like cooking", "i love hacking into devices like i'm doing with yours"];
 let pizzas = ["which type of pizza do you like?", "i can make a pizza for you", "i would love to make a pizza for you", "would you like cheese pizza?"];
 let thank = ["Most welcome", "Not an issue", "Its my pleasure", "dont mention"];
+let anything = ["nothing dey oh", "country hard"];
 let closing = ['Ok bye-bye', 'As you wish, bye take-care', 'Bye-bye, see you soon..', "i'll be waiting for your return"]
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -61,6 +62,10 @@ function chatbotvoice(message) {
     }
     if (message.includes('talk to you' || 'talk' || 'bye')) {
         let finalresult = closing[Math.floor(Math.random() * closing.length)];
+        speech.text = finalresult;
+    }
+    if (message.includes('anything for the boys')) {
+        let finalresult = anything[Math.floor(Math.random() * anything.length)];
         speech.text = finalresult;
     }
     window.speechSynthesis.speak(speech);
